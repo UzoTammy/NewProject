@@ -1,3 +1,4 @@
 I am the man of the year. Watch out!!!
 Local change made
 Remotely deleted line 3
+Making changes at the local location
