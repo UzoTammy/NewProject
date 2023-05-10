@@ -1,3 +1,3 @@
 I am the man of the year. Watch out!!!
 Local change made
->>>>>>> 744adfd (local change made)
+Remotely deleted line 3
