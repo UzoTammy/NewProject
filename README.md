@@ -1,5 +1,2 @@
-# create new file for my project
-# I will continue to learn
-# another line to be committed
-# I am making a change at the remote location
-# there is no day without its own challenge
+This project is in conceptual phase. In the meantime, it is used to practice git and github.
+I have decided to make a python package out of this project.
