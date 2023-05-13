@@ -1,6 +1,7 @@
 .idea/
 venv/
 guide.txt
+.vscode
 
 # Django #
 *.log
