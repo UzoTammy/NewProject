@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+
+{% block content %} 
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <h3>Using HttpResponse to generate a stream</h3>
+            <h4>Objective: Achieving real-time communication from server to client</h4>
+            <p>Render is usually for html templates. Response gives the 
+                flexibility needed to specify what to output.
+            </p>
+            <p> <strong>'text/event-stream'</strong>: 
+                It is used in web applications to implement server-sent events (SSE). 
+                Server-sent events allow a server to send data updates to the client 
+                over a single HTTP connection, enabling real-time communication from 
+                the server to the client.
+
+                The 'text/event-stream' content type is specific to SSE and is used to 
+                send a stream of events from the server to the client. Each event consists 
+                of a separate message with a specific format. The 
+                messages are sent as plain text, and the client-side 
+                JavaScript can handle and process these events.
+            </p>
+            <button class="btn btn-primary">{{dt.day}}</button>
+            <button class="btn btn-primary">{{dt.hour}}</button>
+            <button class="btn btn-primary">{{dt.minutes}}</button>
+            <button class="btn btn-primary">{{dt.seconds}}</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <a class="btn btn-dark" href="{% url 'index' %}">Home</a>
+        </div>
+    </div>
+</div>
+<script>
+    var eventSource = new EventSource("{% url 'get_time' %}");
+    eventSource.onmessage = function(event) {
+    var timerElement = document.getElementById("timer");
+    timerElement.innerText = event.data;
+    };
+
+    // Reload the page every 5 seconds (5000 milliseconds)
+    setTimeout(function() {
+      location.reload();
+    }, 1000);
+
+    // setInterval(updateTag, 1000);
+</script>
+{% endblock %}
