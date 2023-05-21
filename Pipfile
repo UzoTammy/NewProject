@@ -7,6 +7,7 @@ name = "pypi"
 asgiref = "==3.6.0"
 sqlparse = "==0.4.4"
 django = "*"
+pytest-django = "*"
 
 [dev-packages]
 
